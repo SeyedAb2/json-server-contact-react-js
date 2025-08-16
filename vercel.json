@@ -10,4 +10,4 @@
     { "src": "/api/(.*)", "dest": "server/index.js" },
     { "src": "/api-docs", "dest": "server/index.js" }
   ]
-}
+} 
