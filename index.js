@@ -8,15 +8,17 @@ const app = express();
 const router = jsonServer.router(path.join(__dirname, "db.json"));
 const middlewares = jsonServer.defaults();
 
-// Swagger setup
-const swaggerFile = path.join(__dirname, "swagger.json");
-const swaggerData = JSON.parse(fs.readFileSync(swaggerFile, "utf-8"));
+const swaggerDocument = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "swagger.json"), "utf8")
+);
 
 app.use(middlewares);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerData));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api", router);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`🚀 Server is running on http://localhost:${port}`);
-});
+// ❌ اینو لازم نداری روی Vercel:
+// const port = process.env.PORT || 3000;
+// app.listen(port, () => console.log(`Server running on ${port}`));
+
+// ✅ به جای اون:
+module.exports = app;
