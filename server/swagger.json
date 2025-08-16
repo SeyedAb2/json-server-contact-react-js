@@ -4,9 +4,8 @@
     "title": "Mock Contact API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
-  "basePath": "/",
-  "schemes": ["http"],
+  "basePath": "/api",
+  "schemes": ["https"],
   "tags": [
     {
       "name": "Contacts"
