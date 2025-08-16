@@ -1,23 +1,27 @@
 const express = require("express");
 const jsonServer = require("json-server");
 const swaggerUi = require("swagger-ui-express");
-const fs = require("fs");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
-
-// JSON Server setup
 const router = jsonServer.router(path.join(__dirname, "db.json"));
 const middlewares = jsonServer.defaults();
 
 // Swagger setup
-const swaggerDocument = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "swagger.json"), "utf8")
-);
-
-app.use(middlewares);
+const swaggerDocument = JSON.parse(fs.readFileSync(path.join(__dirname, "swagger.json")));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use("/api", router);
 
-// 🚨 خیلی مهم: روی vercel نباید listen باشه
-module.exports = app;
+// JSON Server setup
+app.use("/api", middlewares, router);
+
+// Default route
+app.get("/", (req, res) => {
+  res.send("🚀 Mock Contact API is running! Use /api and /api-docs");
+});
+
+// Run server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on http://localhost:${PORT}`);
+});
