@@ -1,0 +1,53 @@
+{
+  "contacts": [
+    {
+      "fullname": "سید رسول حسینی زاده",
+      "email": "raso2li@info.com",
+      "photo": "https://static2.bartarinha.ir/servev2/jg1NjEyNTljM/5Uwvb7W7Zm0,/file.jpg",
+      "job": "مدیر فنی",
+      "mobile": "09111236752",
+      "group": "3",
+      "id": "ecd5"
+    },
+    {
+      "id": "0b57",
+      "fullname": "مسعود جهان پناهی راد",
+      "email": "masoud24@info.com",
+      "photo": "https://salamdonya.com/assets/images/58/5883p4f75.jpg",
+      "job": "مدیر شرکت",
+      "mobile": "09111287754",
+      "group": "4"
+    },
+    {
+      "id": "aefe",
+      "fullname": "حسین غلامی بائی  ",
+      "photo": "https://w.kanoon.ir/pic/student/NTIzMzg3NTIz",
+      "mobile": "0913312300",
+      "email": "asd3s@info.com",
+      "job": "برنامه نویس  فرانت",
+      "group": "2"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "همکار"
+    },
+    {
+      "id": "2",
+      "name": "دوست"
+    },
+    {
+      "id": "3",
+      "name": "فامیل"
+    },
+    {
+      "id": "4",
+      "name": "سرویس"
+    },
+    {
+      "id": "5",
+      "name": "آشنا"
+    }
+  ]
+}
